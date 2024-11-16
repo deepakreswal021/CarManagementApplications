@@ -8,7 +8,7 @@ const doc = {
         title: 'Car Management System API',
         description: 'Car Management Application for efficient car inventory management with user authentication, car details management, and secure access via JWT authentication.'
     },
-    host: process.env.PORT || 4000
+    host: process.env.PORT || 3000
 }
 
 const outputFile = './swagger-output.json'

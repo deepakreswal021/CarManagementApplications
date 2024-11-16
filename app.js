@@ -5,13 +5,19 @@ import dotenv from "dotenv";
 import express from "express";
 import fileUpload from "express-fileupload";
 import path from "path";
-import swaggerDocument from "./swagger-output.json" assert  {type: "json"};
 import swaggerUi from "swagger-ui-express";
 import userRouter from "./routes/userRoutes.js";
+import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { cloudinaryConnect } from "./clodinary/cloudinaryConnect.js";
 import { dbConnection } from "./database/dbConnection.js";
 import { errorMiddleware } from "./middlewares/error.js";
+
+const swaggerDocument = JSON.parse(
+  readFileSync(new URL("./swagger-output.json", import.meta.url))
+);
+
+// import swaggerDocument from "./swagger-output.json" assert  {type: "json"};
 
 // import swaggerDocument from "./swagger-output.json";
 
