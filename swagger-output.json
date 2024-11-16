@@ -5,13 +5,13 @@
     "description": "Car Management Application for efficient car inventory management with user authentication, car details management, and secure access via JWT authentication.",
     "version": "1.0.0"
   },
-  "host": "localhost:4000",
-  "basePath": "/api/v1",
+  "host": 4000,
+  "basePath": "/",
   "schemes": [
     "http"
   ],
   "paths": {
-    "/car/add": {
+    "/add": {
       "post": {
         "description": "",
         "parameters": [
@@ -47,7 +47,7 @@
         }
       }
     },
-    "/car/getAll": {
+    "/getAll": {
       "get": {
         "description": "",
         "responses": {
@@ -57,7 +57,7 @@
         }
       }
     },
-    "/car/update/{id}": {
+    "/update/{id}": {
       "put": {
         "description": "",
         "parameters": [
@@ -99,7 +99,7 @@
         }
       }
     },
-    "/car/delete/{id}": {
+    "/delete/{id}": {
       "delete": {
         "description": "",
         "parameters": [
@@ -117,7 +117,7 @@
         }
       }
     },
-    "/car/delete-image": {
+    "/delete-image": {
       "delete": {
         "description": "",
         "parameters": [
@@ -153,7 +153,7 @@
         }
       }
     },
-    "/car/upload-images": {
+    "/upload-images": {
       "post": {
         "description": "",
         "parameters": [
@@ -183,7 +183,7 @@
         }
       }
     },
-    "/car/search/{query}": {
+    "/search/{query}": {
       "get": {
         "description": "",
         "parameters": [
@@ -201,7 +201,7 @@
         }
       }
     },
-    "/car/{id}": {
+    "/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -219,7 +219,7 @@
         }
       }
     },
-    "/user/register": {
+    "/register": {
       "post": {
         "description": "",
         "parameters": [
@@ -249,7 +249,7 @@
         }
       }
     },
-    "/user/login": {
+    "/login": {
       "post": {
         "description": "",
         "parameters": [
@@ -276,7 +276,7 @@
         }
       }
     },
-    "/user/logout": {
+    "/logout": {
       "get": {
         "description": "",
         "responses": {
@@ -286,7 +286,7 @@
         }
       }
     },
-    "/user/getuser": {
+    "/getuser": {
       "get": {
         "description": "",
         "responses": {
