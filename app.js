@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import express from "express";
 import fileUpload from "express-fileupload";
 import path from "path";
+import swaggerDocument from "./swagger-output.json";
+import swaggerUi from "swagger-ui-express";
 import userRouter from "./routes/userRoutes.js";
 import { fileURLToPath } from "url";
 import { cloudinaryConnect } from "./clodinary/cloudinaryConnect.js";
@@ -21,6 +23,7 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.urlencoded({extended: true}));
 app.use(fileUpload({
     useTempFiles: true,
@@ -41,7 +44,6 @@ app.options('*', cors(corsOptions)); // Handle preflight requests
 dbConnection();
 cloudinaryConnect();
 app.use(errorMiddleware);
-
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/car", carRouter);
 
