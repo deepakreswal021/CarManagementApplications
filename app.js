@@ -5,13 +5,15 @@ import dotenv from "dotenv";
 import express from "express";
 import fileUpload from "express-fileupload";
 import path from "path";
-import swaggerDocument from "./swagger-output.json";
+import swaggerDocument from "./swagger-output.json" assert  {type: "json"};
 import swaggerUi from "swagger-ui-express";
 import userRouter from "./routes/userRoutes.js";
 import { fileURLToPath } from "url";
 import { cloudinaryConnect } from "./clodinary/cloudinaryConnect.js";
 import { dbConnection } from "./database/dbConnection.js";
 import { errorMiddleware } from "./middlewares/error.js";
+
+// import swaggerDocument from "./swagger-output.json";
 
 // import path from "path";
 
